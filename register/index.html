@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from slapp.in/register/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Apr 2023 10:32:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <style>
+        body,
+        html {
+            background: rgb(24, 24, 34) !important;
+            background: linear-gradient(135deg, rgba(24, 24, 44, 1) 0%, rgba(24, 26, 32, 1) 15%, rgba(24, 25, 36, 1) 75%, rgba(24, 24, 44, 1) 100%);
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slap - Register</title>
+
+    <!-- CSS / Bootstrap -->
+    <link href="../assets/css/imports.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="../../unpkg.com/aos%402.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="../../use.fontawesome.com/releases/v5.8.1/css/all.css" />
+
+    <!-- JQUERY -->
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- SNACKBAR -->
+    <link rel="stylesheet" href="../assets/css/snackbar.css" />
+    <script src="../assets/js/snackbar.js"></script>
+
+    <!-- AOS -->
+    <script src="../../unpkg.com/aos%402.3.1/dist/aos.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
+    
+    <!-- SEO -->
+    <meta name="robots" content="index">
+    <meta name="theme-color" content="#08BA92">
+    <meta property="og:site_name" content="Slap Ghost Client" />
+    <meta property="og:url" content="https://slapp.in/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://slapp.in/assets/img/logo.png" />
+    <meta property="og:description" content="Register to the best Minecraft Ghost Client, Slap!" />
+    <meta name="description" content="Register to the best Minecraft Ghost Client, Slap!">
+    <meta name="keywords" content="ghost client, minecraft hack, minecraft ghost client, hacked client, aim assist minecraft, autoclicker minecraft">
+    
+</head>
+
+<body>
+    <section id="login">
+        <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="" style="width: 3.5rem;">
+        </a>
+        <div class="container h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-md-10 col-lg-5">
+                    <div class="login-box" data-aos="fade-up" data-aos-duration="1500">
+                        <h2>Sign up</h2>
+                        <p>Create a new account here.</p>
+
+                        <!-- LOGIN FORM -->
+                        <form method="post" id="register-form">
+                            <div class="form-input-icon mb-3 mt-4">
+                                <i class="fas fa-user"></i>
+                                <input class="auth-input" type="text" placeholder="Username" name="username" autocomplete="off" minlength="3" required>
+                            </div>
+                            <div class="form-input-icon mb-3">
+                                <i class="fas fa-envelope active"></i>
+                                <input class="auth-input" type="email" placeholder="Email" name="email" autocomplete="off" required>
+                            </div>
+                            <div class="form-input-icon mb-3">
+                                <i class="fas fa-lock"></i>
+                                <input class="auth-input" type="password" placeholder="Password" name="password" autocomplete="off" required minlength="8" pattern="^(?!^\s.*$)(?!^.*\s$)[ -~]+$" id="password">
+                            </div>
+                            <div class="form-input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input class="auth-input" type="password" placeholder="Confirm password" name="confirm_password" autocomplete="off" required minlength="8" pattern="^(?!^\s.*$)(?!^.*\s$)[ -~]+$" id="confirm_password">
+                            </div>
+                            <div class="mt-3 mb-2 progress-bg">
+                                <div id="progress-password"></div>
+                            </div>
+                            <input type="hidden" id="g-captcha-response" name="g-captcha-response" />
+                            <input class="form-check-input" type="checkbox" name="accept-emails-update">
+                            <span style="color: rgba(255, 255, 255, 0.55); font-size: .85rem; margin-left: .5rem">I would like to receive emails about future updates and promotions about the client.</span>
+                            <button href="#" class="button primary d-block mt-3 w-100" id="register-button">Sign in</button>
+                                                    </form>
+                        <!-- ~LOGIN FORM -->
+                    </div>
+                    <p class="text-center bottom-text" data-aos="fade-up" data-aos-duration="2000">Already have an account? <a href="../login/index.html"><strong>Sign in</strong></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="g-recaptcha captcha-bottom" data-sitekey="6LdaJIMdAAAAAJrb3iZGCwnXSiA7tmdT2mTBy9Jd" data-badge="inline" data-size="invisible" data-callback="setResponse">
+        </div>
+        <div class="overlay-top-right"></div>
+        <div class="overlay-bottom-right"></div>
+        <div class="overlay-bottom-left"></div>
+    </section>
+</body>
+
+<!-- BOOTSTRAP JS -->
+<script src="../../cdn.jsdelivr.net/npm/%40popperjs/core%402.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+
+<script src="../assets/js/bootstrap.js"></script>
+
+<!-- CORE -->
+<script src="../assets/js/core.js"></script>
+
+<!-- particles -->
+<script src="../../cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+
+<!-- Start AOS -->
+<script>
+    AOS.init({
+        disable: 'mobile',
+        once: true,
+    });
+</script>
+
+<script>
+    // password complexity
+    $("#password").on('input', function(e) {
+        var complex = checkPassword($(this).val());
+        var progress = $('#progress-password');
+        var valid = complex > 50;
+        if (valid) {
+            progress.css({
+                'width': complex + '%',
+                'box-shadow': valid ?
+                    '0px 0px ' + (parseFloat(complex) / 33.3333333) + 'px ' + (parseFloat(complex) / 33.3333333) + 'px var(--primary-opaque-strong)' : '0px 0px ' + (parseFloat(complex) / 33.3333333) + 'px ' + (parseFloat(complex) / 33.3333333) + 'px rgb(209, 102, 102, 0.15)',
+                'background-color': valid ? 'var(--primary)' : '#D16666'
+            });
+        } else {
+            progress.css({
+                'width': (parseFloat(complex) / 1.5) + '%',
+                'box-shadow': valid ?
+                    '0px 0px ' + (parseFloat(complex) / 33.3333333) + 'px ' + (parseFloat(complex) / 33.3333333) + 'px var(--primary-opaque-strong)' : '0px 0px ' + (parseFloat(complex) / 33.3333333) + 'px ' + (parseFloat(complex) / 33.3333333) + 'px rgb(209, 102, 102, 0.15)',
+                'background-color': valid ? 'var(--primary)' : '#D16666'
+            });
+        }
+    });
+
+    $("#register-form").submit(function(e) {
+        e.preventDefault();
+
+        if ($('#register-button').hasClass('disabled'))
+            return;
+
+        $('#register-button').addClass('disabled');
+        if ($("#password").val() !== $("#confirm_password").val()) {
+            notify("The passwords fields do not match.", 0);
+            enable_auth_button();
+            return;
+        }
+        var data = new FormData($('#register-form')[0]);
+        $.ajax({
+            url: '../php/register/register.php',
+            contentType: "text/html; charset=UTF-8",
+            type: 'POST',
+            data: data,
+            cache: false,
+            async: true,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                grecaptcha.execute();
+                switch (response) {
+                    case "success":
+                        notify("Account registered successfully.", 1);
+                        setTimeout(
+                            function() {
+                                $(location).attr('href', '../dashboard/index.html');
+                            }, 2500);
+                        break;
+                    case "success_redirect":
+                        notify("Successfully logged in.", 1);
+                        setTimeout(
+                            function() {
+                                $(location).attr('href', '../dashboard/product/indexbead.html?product=1');
+                            }, 2500);
+                        break;
+                    case "empty_data":
+                        notify("Fields cannot be empty.", 0);
+                        break;
+                    case "user_short":
+                        notify("Your username is too short. It needs at least 3 characters.", 0);
+                        break;
+                    case "pass_short":
+                        notify("Your password is too short. It needs at least 8 characters.", 0);
+                        break;
+                    case "pass_long":
+                        notify("Your password is too long.", 0);
+                        break;
+                    case "pass_weak":
+                        notify("Your password is too weak.", 0);
+                        break;
+                    case "pass_match":
+                        notify("The passwords fields do not match.", 0);
+                        break;
+                    case "account_exists":
+                        notify("That username or email already exists.", 0);
+                        break;
+                    case "captcha_failed":
+                        notify("Captcha failed, try again.", 0);
+                        break;
+                    case "email_not_valid":
+                        notify("Email not valid.", 0);
+                        break;
+                    case "username_not_valid":
+                        notify("Your username contains characters that are not valid.", 0);
+                        break;
+                }
+            },
+            error: function() {
+                notify("Some unknown error has occurred, please try again later.", 0);
+            }
+        });
+        enable_auth_button();
+    });
+
+    function enable_auth_button() {
+        setTimeout(
+            function() {
+                $('#register-button').removeClass('disabled').delay(800);
+            }, 700);
+    }
+</script>
+
+<script src="../../www.google.com/recaptcha/apida10.js?onload=onloadCallback" async defer></script>
+<script>
+    var onloadCallback = function() {
+        grecaptcha.execute();
+    };
+
+    function setResponse($response) {
+        document.getElementById('g-captcha-response').value = $response;
+    }
+</script>
+
+
+<!-- Mirrored from slapp.in/register/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Apr 2023 10:32:48 GMT -->
+</html>

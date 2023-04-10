@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from slapp.in/login/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Apr 2023 10:32:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <style>
+        body,
+        html {
+            background: rgb(24, 24, 28) !important;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slap - Login</title>
+
+    <!-- CSS / Bootstrap -->
+    <link href="../assets/css/imports.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="../../unpkg.com/aos%402.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="../../use.fontawesome.com/releases/v5.8.1/css/all.css" />
+
+    <!-- JQUERY -->
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- SNACKBAR -->
+    <link rel="stylesheet" href="../assets/css/snackbar.css" />
+    <script src="../assets/js/snackbar.js"></script>
+
+    <!-- AOS -->
+    <script src="../../unpkg.com/aos%402.3.1/dist/aos.js"></script>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
+    
+        <!-- SEO -->
+    <meta name="robots" content="index">
+    <meta name="theme-color" content="#08BA92">
+    <meta property="og:site_name" content="Slap Ghost Client" />
+    <meta property="og:url" content="https://slapp.in/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://slapp.in/assets/img/logo.png" />
+    <meta property="og:description" content="Login to Slapp.in! The best Minecraft cheat." />
+    <meta name="description" content="Login to Slapp.in! The best Minecraft cheat.">
+    <meta name="keywords" content="ghost client, minecraft hack, minecraft ghost client, hacked client, aim assist minecraft, autoclicker minecraft">
+    
+</head>
+
+<body>
+    <section id="modal-login" class="d-none" onclick="checkForClose()">
+        <div class="modal-box">
+            <div class="row justify-content-center align-items-center title">
+                <div class="col-12">
+                    <h2 id="modal-title">Reset your password</h2>
+                </div>
+                <div class="col-12 mt-3">
+                    <form method="post" id="reset-form">
+                        <div class="form-input-icon mb-3">
+                            <i class="fas fa-envelope active"></i>
+                            <input class="auth-input" type="email" placeholder="Email" name="email" autocomplete="off" required>
+                        </div>
+                        <button href="#" class="button primary d-block w-100" id="reset-button">Reset your password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="login">
+    <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="" style="width: 3.5rem;">
+         </a>
+        <div class="container h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-md-10 col-lg-5">
+                    <div class="login-box" data-aos="fade-up" data-aos-duration="1500">
+                        <h2>Sign in</h2>
+                        <p>Login to manage your account.</p>
+
+                        <!-- LOGIN FORM -->
+                        <form method="post" id="login-form">
+                            <div class="form-input-icon mb-3 mt-4">
+                                <i class="fas fa-user"></i>
+                                <input class="auth-input" type="text" placeholder="Username" name="username" autocomplete="off" minlength="3" required>
+                            </div>
+                            <div class="form-input-icon mb-3">
+                                <i class="fas fa-lock"></i>
+                                <input class="auth-input" type="password" placeholder="Password" name="password" autocomplete="off" required minlength="8" pattern="^(?!^\s.*$)(?!^.*\s$)[ -~]+$" id="password">
+                            </div>
+                            <input type="hidden" id="g-captcha-response" name="g-captcha-response" />
+                                                        <button href="#" class="button primary d-block mt-3 w-100" id="login-button">Sign in</button>
+                        </form>
+                        <!-- ~LOGIN FORM -->
+                    </div>
+                    <p class="text-center bottom-text" data-aos="fade-up" data-aos-duration="2000">Don't have an account? <a href="../register/index.html"><strong>Sign up</strong></a></p>                    <a class="text-center bottom-text-green" onclick="openModal()" data-aos="fade-up" data-aos-duration="2500">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+        <div class="g-recaptcha captcha-bottom" data-sitekey="6LdaJIMdAAAAAJrb3iZGCwnXSiA7tmdT2mTBy9Jd" data-badge="inline" data-size="invisible" data-callback="setResponse">
+        </div>
+        <div class="overlay-top-right"></div>
+        <div class="overlay-bottom-right"></div>
+        <div class="overlay-bottom-left"></div>
+    </section>
+</body>
+
+<!-- BOOTSTRAP JS -->
+<script src="../../cdn.jsdelivr.net/npm/%40popperjs/core%402.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="../assets/js/bootstrap.js"></script>
+
+<!-- CORE -->
+<script src="../assets/js/core.js"></script>
+
+<!-- Start AOS -->
+<script>
+    AOS.init({
+        disable: 'mobile',
+        once: true,
+    });
+</script>
+
+<script>
+    $("#login-form").submit(function(e) {
+        e.preventDefault();
+
+        if ($('#login-button').hasClass('disabled'))
+            return;
+
+        $('#login-button').addClass('disabled');
+        var data = new FormData($('#login-form')[0]);
+        $.ajax({
+            url: '../php/login/login.php',
+            contentType: "text/html; charset=UTF-8",
+            type: 'POST',
+            data: data,
+            cache: false,
+            async: true,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                grecaptcha.execute();
+                switch (response) {
+                    case "success":
+                        notify("Successfully logged in.", 1);
+                        setTimeout(
+                            function() {
+                                                                let redirect_url = '../dashboard/index.html';                                  $(location).attr('href', redirect_url);
+                            }, 2500);
+                        break;
+                    case "success_redirect":
+                        notify("Successfully logged in.", 1);
+                        setTimeout(
+                            function() {
+                                $(location).attr('href', '../dashboard/product/indexbead.html?product=1');
+                            }, 2500);
+                        break;
+                    case "empty_data":
+                        notify("Fields cannot be empty.", 0);
+                        break;
+                    case "account_invalid":
+                        notify("No account was found or your password is invalid.", 0);
+                        break;
+                    case "captcha_failed":
+                        notify("Captcha failed, try again.", 0);
+                        break;
+                    default:
+                        var split_ = response.split(":");
+                        if (split_[0] == "banned") {
+                            notify("You are banned from Slap. Reason: " + split_[1], 0);
+                        }
+                        break;
+                }
+            },
+            error: function() {
+                notify("Some unknown error has occurred, please try again later.", 0);
+            }
+        });
+        setTimeout(
+            function() {
+                $('#login-button').removeClass('disabled').delay(800);
+            }, 700);
+    });
+
+    function openModal() {
+        $("#modal-login").fadeIn(300);
+        $("#modal-login").removeClass("d-none");
+        $("#modal-login input").val("");
+    }
+
+    function closeModal() {
+        $("#modal-login").fadeOut(300);
+    }
+
+    function checkForClose() {
+        if (!($("#modal-login>.modal-box").is(':hover'))) {
+            closeModal();
+        }
+    }
+</script>
+
+<script>
+    $("#reset-form").submit(function(e) {
+        e.preventDefault();
+
+        if ($('#reset-button').hasClass('disabled'))
+            return;
+
+        $('#reset-button').addClass('disabled');
+        var data = new FormData($('#reset-form')[0]);
+        $.ajax({
+            url: '../php/reset_password/reset_password.php',
+            contentType: "text/html; charset=UTF-8",
+            type: 'POST',
+            data: data,
+            cache: false,
+            async: true,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                switch (response) {
+                    case "mail_sent":
+                        notify("Password reset email was sent successfully.", 1);
+                        break;
+                    case "mail_not_sent":
+                        notify("Email not sent, try again in some minutes.", 1);
+                        break;
+                    case "wait_delay":
+                        notify("You need to wait some minutes to do a new email request.", 2);
+                        break;
+                }
+            },
+            error: function() {
+                notify("Some unknown error has occurred, please try again later.", 0);
+            }
+        });
+        setTimeout(
+            function() {
+                $('#reset-button').removeClass('disabled').delay(800);
+            }, 700);
+    });
+</script>
+
+<script src="../../www.google.com/recaptcha/apida10.js?onload=onloadCallback" async defer></script>
+<script>
+    var onloadCallback = function() {
+        grecaptcha.execute();
+    };
+
+    function setResponse($response) {
+        document.getElementById('g-captcha-response').value = $response;
+    }
+</script>
+
+
+<!-- Mirrored from slapp.in/login/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Apr 2023 10:32:44 GMT -->
+</html>
